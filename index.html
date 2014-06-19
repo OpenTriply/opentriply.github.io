@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YASQE</title>
-
-  <link href="dist/yasqe.css" rel="stylesheet" type="text/css" />
-  <link href="doc/doc.css" rel="stylesheet" type="text/css" />
+    <title>YASGUI</title>
+  <link rel="icon"  type="image/png" href="imgs/favicon.png">
+  <link href="dist/bundle.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
   
@@ -22,99 +21,65 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">YASQE</a>
+<!--           <a class="navbar-brand" href="#">YASGUI</a> -->
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">About</a></li>
-            <li><a href="doc/doc.html">Documentation</a></li>
+            <li><a target="_blank" href="http://yasgui.laurensrietveld.nl">YASGUI</a></li>
+            <li><a target="_blank" href="http://yasqe.yasgui.org">YASQE</a></li>
+            <li><a target="_blank" href="http://yasr.yasgui.org">YASR</a></li>
             <li><a target="_blank" href="http://laurensrietveld.nl">About me</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-<div class="jumbotron text-center">
-        <img width="30%" src="doc/imgs/yasgui.png">Query
-        <p>
-			Yet Another SPARQL Query Editor, funded by <a href="http://data2semantics.org" target="_blank"><img width="30%" src="doc/imgs/data2semantics.png"></a>
-		</p>
-       <p>
-				<a class="btn btn-large btn-info" href="https://github.com/LaurensRietveld/yasgui" target="_blank">View
-					source on GitHub&nbsp;<img style="height: 22px;" src="doc/imgs/blacktocat.png">
-				</a>
-			</p>
+     <div class="container" role="main">
+<div class="jumbotron ">
+		<div class="row">
+	        <div class="col-md-3">
+	        <img class="img-responsive" src="imgs/yasgui.png">
+	        </div>
+	        <div class="col-md-9">
+	        	<h1>Yet Another Sparql GUI</h1>
+	        	
+	        	<div style="text-align:right">Funded by <a href="http://data2semantics.org" target="_blank"><img width="30%" src="imgs/data2semantics.png"></a></div>
+	        </div>
       </div>
-    <div class="container" role="main">
-
-		
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      
-      	<div id="aboutYQuery">
-      	<h1>About YASQE</h1>
-      	YASQE is part of the regular <a target="_blank" href='http://laurensrietveld.nl/yasgui'>YASGUI</a> web application. YASQE provides a simple syntax highlighted text area, bundled with features such as autocompletion, and the option to query SPARQL endpoints.
-      	<div id="showcase"></div>
-      	<code>var yasqe = YASQE(document.getElementById("showcase"));</code> <br>
-      	(or, if you would like to instantiate YASQE from an existing text area, use <code>var yasqe = YASQE.fromTextArea(document.getElementById('textAreaItem'));</code>
-      	</div>
-      
-      	<div id="features">
-      	<h1>Features</h1>
-      	YASQE features:
-      	<ul>
-      	<li>SPARQL syntax highlighting and error checking </li>
-      	<li>Extremely customizable: All functions and handlers from <a href="http://codemirror.net" target="_blank">CodeMirror library</a> are accessible</li>
-      	<li>Persistent values (optional): your query is stored for easier reuse between browser sessions
-      	<li>Prefix autocompletion (using <a href="http://prefix.cc" target="_blank">prefix.cc</a>)</li>
-      	<li>Handlers to easily add your own property and class autocompletion</li>
-      	<li>Handy <a href="#keyboardShortcuts">keyboard shortcuts</a></li>
-      	<li>Possible to execute the query directly</li>
-      	</ul>
-      	</div>
-      	<div id="releases">
-      	<h1>Download</h1>
-		<a class="btn btn-primary" href="https://github.com/YASGUI/YASQE" target="_blank">Download latest release</a>
-      	</div>
-      	
-      	<div id="keyboardShortcuts">
-      	<h1>Keyboard shortcuts</h1>
-      	YASQE comes with some useful keyboard shortcuts. And even better, take a look at the <a href="doc/doc.html">documentation</a> on how to add your own.
-      	Some examples:
-      	<ul>
-      	<li><code>[CTRL|CMD] - /</code>: Comment/uncomment line(s)</li>
-      	<li><code>[CTRL|CMD] - D</code>: Delete line(s)</li>
-      	<li><code>[CTRL|CMD] - ENTER</code>: Execute query</li>
-      	<li><code>[CTRL|CMD] - SHIFT - f</code>: Auto-format selected lines</li>
-      	<li><code>[CTRL|CMD] - [</code>: Move line(s) left (unindent)</li>
-      	<li><code>[CTRL|CMD] - ]</code>: Move line(s) right (indent)</li>
-      	<li><code>[CTRL|CMD] - ALT - down</code>: Copy line(s) down</li>
-      	<li><code>[CTRL|CMD] - ALT - up</code>: Copy line(s) up</li>
-      	<li><code>[CTRL|CMD] - Enter</code>: Execute query (if you have defined handlers in the configuration)</li>
-      	<li><code>[CTRL|CMD] - S</code>: Store the editor contents in local storage (if this is enabled)</li>
-      	</ul>
-      	</div>
-      	
-      	<div id="thanks">
-      	<h1>Thanks!</h1>
-      	A big thanks goes out to: 
-      	<ul>
-      	<li>The people behind the <a href="http://openuplabs.tso.co.uk/demos/sparqleditor" target="_blank">Flint SPARQL editor</a> for publishing the javascript SPARQL grammar</li>
-      	<li>Marijn Haverbeke for his great work on the <a href="http://codemirror.net" target="_blank">CodeMirror library</a> syntax highlighting library</li>
-      	<li>Pierre-Yves Vandenbussche and Bernard Vatant for their useful <a href='http://lov.okfn.org/' target="_blank">Linked Open Vocabularies service</a>, of which I use the <a target="_blank" href="lov.okfn.org/dataset/lov/apidoc/">API</a> to autocomplete properties and classes
-      	<li>Richard Cyganiak for his simple but effective <a href='http://prefix.cc' target="_blank">Prefix.cc</a> service, which I use for autocompleting prefixes.
-      	</ul>
-      	</div>
-      	
-      
+      </div>
+   
+	<div class="row">
+     	<div class="col-md-6">
+     	<h3>YASGUI for end-users</h3>
+     	YASGUI is a feature-packed user-friendly interface to access any SPARQL endpoint, both on your local computer as well as remote ones. YASGUI provides syntax checking and highlighting, assists you by autocompleting your prefixes, properties, classes, and endpoints, allows you to bookmark queries, and much more. 
+     	<a href="http://yasgui.laurensrietveld.nl" target="_blank">Try it out</a>, or <a href="http://laurensrietveld.nl/yasgui" target="_blank">read more about its features</a>.
+     	</div>
+     	
+     	
+     	<div class="col-md-6">
+     	<h3>YASGUI for publishers: <a href="http://yasqe.yasgui.org" target="_blank"><img style="max-height: 60px" src="logos/yasqe.png"></a> and <a href="http://yasr.yasgui.org" target="_blank"><img style="max-height: 60px" src="logos/yasr.png"></a></h3>
+     	Want to get rid of the simple text area of your SPARQL endpoint? 
+     	Get your own YASGUI, and upgrade all these simple text areas! All it takes is 1 single line of javascript code: <code>var yasqe = new YASQE.fromTextArea(document.getElementById('textArea'))</code>.
+     	We provide a single javascript library for the SPARQL query editor (<a href="http://yasqe.yasgui.org" target="_blank">YASQE</a>), as well as a javascript library for visualization of SPARQL results (<a href="http://yasr.yasgui.org" target="_blank">YASR</a>).
+     	For more information on the features, configurability and extendability, and where to download these libraries, visit the <a href="http://yasqe.yasgui.org" target="_blank">YASQE</a> and <a href="http://yasr.yasgui.org" target="_blank">YASR</a> documentation pages.
+     	</div>
+   	</div>	
+	
+     
+     <div class="row">
+     <div class="col-md-12">
+     <h3>What's next?</h3>
+     
+     </div>
+     
+     
+     </div>
      
     </div> <!-- /container -->
 
 
 
- <script src="dist/yasqe.js"></script>
-<script src="doc/doc.js"></script>
-<script type="text/javascript">
-	var yasqe = YASQE(document.getElementById("showcase"), {viewportMargin: Infinity});
-</script>
+ <script src="dist/bundle.min.js"></script>
   </body>
 </html>
 
